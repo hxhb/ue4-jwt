@@ -15,7 +15,7 @@
 	"Installed": false,
 	"Modules": [
 		{
-			"Name": "Jwt",
+			"Name": "JwtRuntime",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
 		}

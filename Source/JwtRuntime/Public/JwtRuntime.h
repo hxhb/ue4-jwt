@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "Modules/ModuleManager.h"
 
-class FJwtModule : public IModuleInterface
+class FJwtRuntimeModule : public IModuleInterface
 {
 public:
 

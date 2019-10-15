@@ -6,11 +6,21 @@
 #include <chrono>
 #include <unordered_map>
 #include <memory>
-#include <openssl/evp.h>
-#include <openssl/hmac.h>
-#include <openssl/pem.h>
-#include <openssl/ec.h>
-#include <openssl/err.h>
+
+#define UI UI_ST
+THIRD_PARTY_INCLUDES_START
+	#include <openssl/evp.h>
+	#include <openssl/hmac.h>
+	#include <openssl/pem.h>
+	#include <openssl/ec.h>
+	#include <openssl/err.h>
+THIRD_PARTY_INCLUDES_END
+#undef UI
+
+// hidden Verify macro,it defined in Misc/AssertionMacros.h
+#ifdef verify
+	#undef verify
+#endif
 
 //If openssl version less than 1.1
 #if OPENSSL_VERSION_NUMBER < 269484032
@@ -1594,3 +1604,4 @@ namespace jwt {
 		return decoded_jwt(token);
 	}
 }
+
