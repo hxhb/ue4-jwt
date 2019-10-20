@@ -38,8 +38,11 @@ public class JwtRuntime : ModuleRules
         PublicDependencyModuleNames.AddRange(
 			new string[]
 			{
-				"Core",
-				"OpenSSL"
+                "Engine",
+                "Core",
+                "CoreUObject",
+                "Slate",
+                "OpenSSL"
 				// ... add other public dependencies that you statically link with here ...
 			}
 			);
@@ -64,5 +67,6 @@ public class JwtRuntime : ModuleRules
         bEnableUndefinedIdentifierWarnings = false;
         bUseRTTI = true;
         bEnableExceptions = true;
+        OptimizeCode = CodeOptimization.InShippingBuildsOnly;
     }
 }
